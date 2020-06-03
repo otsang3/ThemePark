@@ -40,4 +40,16 @@ public class ThemePark {
         this.attractionsAndStalls.add(attraction);
     }
 
+    public void addReview(IReviewed attraction){
+        this.reviewedAttractionsAndStalls.add(attraction);
+    }
+
+    public HashMap returnValues(){
+        HashMap<String, Integer> allReviews = new HashMap<String, Integer>();
+        for (IReviewed iReviewed : this.reviewedAttractionsAndStalls){
+            allReviews.put(iReviewed.getName(), iReviewed.getRating());
+        }
+        return allReviews;
+    }
+
 }
